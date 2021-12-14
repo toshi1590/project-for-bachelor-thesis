@@ -19,6 +19,14 @@
         <input type="text" name="url" class="form-control" placeholder="e.g. https://www.example.com/" required>
       </div>
 
+      <div class="mb-5" id="ajax_section">
+        <label class="mb-1" id="title_of_ajax_section">
+          <b>ajax</b>
+          <button type="button" class="btn btn-primary" onclick="create_ajax_inputs(this)">use</button>
+        </label>
+        <div id="ajax_inputs"></div>
+      </div>
+
       <div class="mb-5" id="column_numbers_to_scrape_section">
         <label class="mb-1">
           <b>column numbers to scrape (required at least 1 column)</b>
@@ -28,11 +36,15 @@
           <tbody id="tbody_of_table_for_column_numbers_to_scrape">
             <tr>
               <td>column number to scrape</td>
+              <td>title</td>
               <td></td>
             </tr>
             <tr>
               <td>
                 <input type="number" class="form-control" name="column_numbers_to_scrape[]" placeholder="e.g. 1" min="1" step="1" required>
+              </td>
+              <td>
+                <input type="text" class="form-control" name="titles[]" placeholder="e.g. price" required>
               </td>
               <td></td>
             </tr>
@@ -44,7 +56,7 @@
         <label class="mb-1">
           <b>column numbers to click, titles and xpaths to scrape in a new page</b>
           <button type="button" class="btn btn-primary" id="add_btn_for_column_numbers_to_click">add</button>
-          <a href="list.html" target="_blank">(examples)</a>
+          <a href="examples.html" target="_blank">(examples)</a>
         </label>
       </div>
 
@@ -58,9 +70,9 @@
       <div class="mb-5" id="pagination_section">
         <label class="mb-1" id="title_of_pagination_section">
           <b>pagination</b>
-          <button type="button" class="btn btn-primary" id="use_btn" onclick="create_pagination_inputs(this)">use</button>
+          <button type="button" class="btn btn-primary" onclick="create_pagination_inputs(this)">use</button>
         </label>
-        <div class="" id="pagination_inputs"></div>
+        <div id="pagination_inputs"></div>
       </div>
 
       <button type="button" class="btn btn-success" id="start_scraping_btn">start scraping</button>
@@ -77,6 +89,12 @@
     <script type="text/javascript" src="paginathing.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+
+    <script src="common_functions.js"></script>
+    <script src="background_colors.js"></script>
+
+
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
